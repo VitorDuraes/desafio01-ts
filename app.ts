@@ -1,9 +1,21 @@
-import { CompanyAccount } from './class/CompanyAccount'
-import { PeopleAccount } from './class/PeopleAccount'
+import { CompanyAccount } from './class/CompanyAccount';
+import { BonusAccount } from './class/BonusAccount';
 
-const peopleAccount: PeopleAccount = new PeopleAccount(1, 'Nath', 10)
-console.log(peopleAccount)
-peopleAccount.deposit()
-const companyAccount: CompanyAccount = new CompanyAccount('DIO', 20)
-companyAccount.deposit()
-console.log(companyAccount)
+// Instances
+const company = new CompanyAccount("XPTO Corp", 12345);
+const bonusClient = new BonusAccount("Vitor Duraes", 67890);
+
+// CompanyAccount methods
+console.log("\n== Company Account ==");
+company.getBalance();
+company.deposit(500);
+company.getLoan(1000);
+company.withdraw(200);
+company.getBalance();
+
+// BonusAccount methods
+console.log("\n== Bonus Account ==");
+bonusClient.getBalance();
+bonusClient.deposit(100); // Will add 110
+bonusClient.withdraw(50);
+bonusClient.getBalance();
